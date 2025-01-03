@@ -31,14 +31,14 @@ const Shoppingcart = () => {
         {/* bottom part of products detail starting.................................. */}
         <div className=' flex justify-between items-center relative mt-[40px] '>
           <div className="w-[100px] h-[105px] rounded-lg ">
-            <Image src={objData.data.imageUrl} alt="cart-items-image" width={200} height={200} 
+            <Image src={objData.data?.imageUrl || ""} alt="cart-items-image" width={200} height={200} 
      className="w-[100px] h-[95px] object-cover"
           />
           </div>
 
 
-          <h1 className="font-semibold text-[16px] relative -left-7">{objData.data.smallHeading}</h1>
-          <p> <span className="text-[#B88E2F] relative -left-[47px]">{objData.data.price}</span></p>
+          <h1 className="font-semibold text-[16px] relative -left-7">{objData.data?.smallHeading}</h1>
+          <p> <span className="text-[#B88E2F] relative -left-[47px]">{objData.data?.price}</span></p>
           <div className='w-[50px] h-[50px] rounded-lg flex justify-center items-center
           relative -left-[50px]
           '>{obj.count}</div>
