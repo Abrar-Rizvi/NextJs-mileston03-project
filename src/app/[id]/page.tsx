@@ -3,7 +3,7 @@
 import Button from "@/components/Button";
 
 
-import { useState, useEffect,  useContext} from "react";
+import { useState, useEffect, useContext } from "react";
 import { useParams } from "next/navigation";
 import Imagecomponent from "@/components/Image";
 import Quantity from "@/components/Quantity";
@@ -18,22 +18,22 @@ import { dataContext } from "../context/context";
 
 
 const Dynamicpage = () => {
-  
-const [username, setusername] = useState<string>('');
-const [submittedValue, setSubmittedValue] = useState<string[]>([]);
-const [isOpenCart, setIsOpenCart] = useState<boolean>(false)
+
+  const [username, setusername] = useState<string>('');
+  const [submittedValue, setSubmittedValue] = useState<string[]>([]);
+  const [isOpenCart, setIsOpenCart] = useState<boolean>(false)
   const obj = useContext(dataContext)
   console.log(obj)
- 
- 
+
+
 
   const { id } = useParams();
 
- 
-  
+
+
 
   const clickOpeningCart = () => {
-    
+
     setIsOpenCart(!isOpenCart)
   }
 
@@ -54,7 +54,7 @@ const [isOpenCart, setIsOpenCart] = useState<boolean>(false)
     fetchProduct();
   }, [id]);
 
- 
+
 
   const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -152,7 +152,4 @@ export default Dynamicpage;
 
 
 
-function setData(data: any) {
-  throw new Error("Function not implemented.");
-}
 
