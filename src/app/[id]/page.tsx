@@ -52,7 +52,7 @@ const Dynamicpage = () => {
 
     };
     fetchProduct();
-  }, [id]);
+  }, [id, obj]);
 
 
 

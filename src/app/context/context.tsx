@@ -4,8 +4,13 @@ import { createContext, } from 'react'
 
 
 interface Count {
-    [x: string]: any
+    [x: string]: any | number
 }
+
+// interface Data {
+//     name: string;
+//     count: number;
+//   }
 
 
 
