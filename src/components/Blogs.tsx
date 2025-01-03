@@ -1,13 +1,23 @@
-import { products } from "@/Data"
-
-
 
 import Link from "next/link"
 import Imagecomponent from "./Image"
 
+ interface IProduct {
+    id: number; // Unique identifier for the product
+    smallHeading: string; // Short title for the product
+    longHeading: string; // Detailed title or name of the product
+    price: string; // Price of the product in string format
+    description: string; // A short description of the product
+    features: string[]; // An array of features describing the product
+    imageUrl: string;  //image url  in string format
+  }
 
 
-const Blogs = () => {
+
+const Blogs = async ()  => {
+    const res = await fetch('http:localhost:3000/api/products')
+    const products: IProduct[] = await res.json()
+    console.log( products)
     return (
         <div className="w-full h-auto   flex flex-col bg-[#fcf0f0] pt-[100px]">
 

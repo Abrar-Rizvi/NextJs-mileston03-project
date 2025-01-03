@@ -1,8 +1,11 @@
+
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { Countprovider } from "./context/Countprovider";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,13 +27,23 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+
+
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Header />
-        {children}
+
+        <Countprovider>
+          {children}
+        </Countprovider>
+
+
+
+
         <Footer />
       </body>
     </html>

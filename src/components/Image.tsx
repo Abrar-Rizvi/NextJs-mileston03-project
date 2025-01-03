@@ -10,8 +10,8 @@ interface ImageI {
 }
 const Imagecomponent = ({src, width, height, alt, className}: ImageI) => {
   return (
-    // image component
-    <Image src={src}
+    // Image component
+    <Image src={src || '/fallback-image.jpg'}
      alt={alt}
      width={width}
      height={height} 
